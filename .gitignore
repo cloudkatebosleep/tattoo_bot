@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.session
+
+# Environment files
+.env
+
+
+# IDE/Editor
+
+.vscode/
+
+# Docker
+docker-compose.override.yml
