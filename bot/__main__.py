@@ -21,8 +21,7 @@ def main():
             NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_name)],
             DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_date)],
             SIZE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_size)],
-        },
-        fallbacks=[CommandHandler("cancel", cancel)]
+        }
     )
 
     app.add_handler(conv_handler)

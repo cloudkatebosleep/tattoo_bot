@@ -61,7 +61,3 @@ async def get_size(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text("Спасибо, ты записан! Ожидай подтверждения записи от мастера!", reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
-
-async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Окей, отменено.", reply_markup=ReplyKeyboardRemove())
-    return ConversationHandler.END
