@@ -7,7 +7,7 @@ from telegram.ext import (
 )
 from dotenv import load_dotenv
 import os
-from bot.handlers import start, get_name, get_date, get_size, cancel, NAME, DATE, SIZE
+from bot.handlers import start, get_name, get_date, get_size, NAME, DATE, SIZE
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -21,7 +21,8 @@ def main():
             NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_name)],
             DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_date)],
             SIZE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_size)],
-        }
+        },
+        fallbacks=[]
     )
 
     app.add_handler(conv_handler)
