@@ -2,6 +2,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv
+from bot.models import Base
 
 load_dotenv()
 
@@ -26,3 +27,7 @@ async_session = sessionmaker(
 async def get_session():
     async with async_session() as session:
         yield session
+        
+async def init_db():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)

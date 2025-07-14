@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *.session
-
+\
 # Environment files
 .env
 
@@ -13,3 +13,7 @@ __pycache__/
 
 # Docker
 docker-compose.override.yml
+
+# ----- 
+bot/init_db.py
+bot/seed.py
